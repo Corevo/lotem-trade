@@ -1,0 +1,32 @@
+{
+  "name": "lotem-trade",
+  "version": "0.0.0",
+  "description": "An internal virtual coin trading system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corevo/lotem-trade.git"
+  },
+  "author": "Tomer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Corevo/lotem-trade/issues"
+  },
+  "homepage": "https://github.com/Corevo/lotem-trade#readme",
+  "dependencies": {
+    "babel-core": "^6.0.14",
+    "babel-loader": "^6.0.0",
+    "mysql": "^2.9.0",
+    "react": "^0.13.3",
+    "react-redux": "^3.1.0",
+    "react-router": "^0.13.4",
+    "redux": "^3.0.4",
+    "redux-router": "^0.1.0",
+    "sequelize": "^3.13.0",
+    "superagent": "^1.4.0",
+    "webpack": "^1.12.2"
+  }
+}
