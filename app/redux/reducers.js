@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { routerStateReducer } from 'redux-router';
 import { ADD_TRANSACTION } from './actions';
 
 function accountTransactions(state = [], action) {
@@ -12,6 +13,7 @@ function accountTransactions(state = [], action) {
     }
 }
 const reducers = combineReducers({
+    router: routerStateReducer,
     accountTransactions
 });
 
