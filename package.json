@@ -32,6 +32,7 @@
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0-rc3",
     "react-tap-event-plugin": "^0.2.1",
+
     "redux": "^3.0.4",
     "redux-router": "^0.1.0",
     "sequelize": "^3.13.0",
