@@ -2,7 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import coinApp from './redux/reducers';
 import Overview from './views/overview';
+
+let store = createStore(coinApp);
 
 class App extends React.Component {
     render () {
@@ -23,4 +28,7 @@ let routes = (
 
 
 let history = createBrowserHistory();
-ReactDOM.render(<Router routes={routes} history={history} />, document.getElementById('app'));
+ReactDOM.render(<Provider store={store}>
+    <Router routes={routes} history={history} />
+    </Provider>,
+    document.getElementById('app'));
