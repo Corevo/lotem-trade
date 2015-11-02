@@ -1,26 +1,26 @@
-import express from 'express'
-import path from 'path';
-import fs from 'fs';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
+import Overview from './views/overview';
 
-import transactions from '../lib/routes/transaction'
-import home from '../lib/routes/home'
+class App extends React.Component {
+    render () {
+        return (
+            <div>
+                <h1>HI</h1>
+                {this.props.children}
+            </div>
+        );
+    }
+}
 
-let port = 3000;
-let app = express();
+let routes = (
+    <Route path="/" component={App}>
+        <IndexRoute component={Overview} />
+    </Route>
+);
 
-const STATIC_DIR = path.join(__dirname, '..', 'public');
-app.use('/assets', express.static(STATIC_DIR));
 
-app.use('/', home);
-app.use('/transactions', transactions);
-
-app.use('*', function(req, res) {
-  res.redirect('/');
-});
-
-// Start the server.
-let server = app.listen(port, () => {
-
-  let { address, port } = server.address();
-  console.log(`Server listening at http://${address}:${port}`);
-});
+let history = createBrowserHistory();
+ReactDOM.render(<Router routes={routes} history={history} />, document.getElementById('app'));
