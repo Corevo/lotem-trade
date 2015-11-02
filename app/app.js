@@ -34,11 +34,9 @@ class App extends React.Component {
                         clear: 'both'
                     }}>
                 <SideMenu />
-                <Paper style={{
-                        float: 'left',
+                <Paper className='col-md-9' style={{
                         borderRadius: '0px',
-                        height: '100%',
-                        width: '70%'
+                        height: '100%'
                     }}>
                     {this.props.children}
                 </Paper>

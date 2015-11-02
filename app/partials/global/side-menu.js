@@ -7,9 +7,7 @@ let MenuDivider = require('material-ui/lib/menus/menu-divider');
 export default class SideMenu extends React.Component {
     render () {
         return (
-            <Paper zDepth={2} style={{
-                    width: '280px',
-                    float: 'left',
+            <Paper className='col-md-3' zDepth={2} style={{
                     borderRadius: '0px'
                 }}>
             <Menu ref="menu" zDepth={0} style={{
