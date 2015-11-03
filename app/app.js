@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, Link } from 'react-router';
 import { reduxReactRouter, ReduxRouter, pushState } from 'redux-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { createStore, compose } from 'redux';
@@ -35,8 +35,23 @@ class App extends React.Component {
         };
         return (
             <div>
-                <AppBar title={`Lotem Coin ${this.props.title}`}
-                    iconElementLeft={null} />
+                <AppBar title=<Link to="/" style={{
+                        didFlip: true,
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        margin: 0,
+                        paddingTop: 0,
+                        letterSpacing: 0,
+                        fontSize: '24px',
+                        fontWeight: 400,
+                        color: '#ffffff',
+                        lineHeight: '64px',
+                        ['-webkit-box-flex']: 1,
+                        flex: 1,
+                        textDecoration: 'none'
+                    }}>{`Lotem Coin ${this.props.title}`}</Link>
+                    iconElementLeft=<div></div> />
                 <div style={{
                         clear: 'both'
                     }}>
