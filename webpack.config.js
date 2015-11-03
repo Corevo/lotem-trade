@@ -7,7 +7,7 @@ module.exports = {
         index: './app/app.js'
     },
     output: {
-        filename: './public/bin/[name].js'
+        filename: './public/assets/bin/[name].js'
     },
     module: {
         loaders: [
