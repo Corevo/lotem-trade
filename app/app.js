@@ -8,9 +8,15 @@ import { Provider, connect } from 'react-redux';
 import { createHistory } from 'history';
 import { AppBar, Paper } from 'material-ui';
 import coinApp from './redux/reducers';
+import { changeTitle } from './redux/actions';
 import SideMenu from './partials/global/side-menu';
 import Overview from './views/overview';
 import Shop from './views/shop';
+
+let store = compose(
+    reduxReactRouter({ createHistory })
+)(createStore)(coinApp);
+const dispatch = store.dispatch;
 
 class App extends React.Component {
     static propTypes = {
@@ -31,7 +37,7 @@ class App extends React.Component {
                 <div style={{
                         clear: 'both'
                     }}>
-                <SideMenu history={this.props.history} />
+                <SideMenu history={this.props.history} changeTitle={text => dispatch(changeTitle(text))} />
                 <Paper className='col-md-9' style={{
                         borderRadius: '0px',
                         height: '100%'
@@ -43,6 +49,8 @@ class App extends React.Component {
         );
     }
 }
+
+//
 
 let Appx = connect(
     // Use a selector to subscribe to state
@@ -60,10 +68,6 @@ let routes = (
         <Route path="/shop" component={Shop} />
     </Route>
 );
-
-let store = compose(
-    reduxReactRouter({ createHistory })
-)(createStore)(coinApp);
 
 class Root extends React.Component {
     render() {
