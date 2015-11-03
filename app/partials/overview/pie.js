@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactChart from 'react-chartjs';
-import {Styles, FontIcon, Paper} from 'material-ui';
+import {Styles, FontIcon} from 'material-ui';
 import Chart from 'chart.js';
 
 const {Colors} = Styles;
@@ -11,40 +11,38 @@ Chart.defaults.global.maintainAspectRatio = false;
 export default class Pie extends React.Component {
     render () {
         return (
-            <Paper>
-                <div style={{
-                    display: 'flex',
-                    paddingTop: '40px',
-                    paddingBottom: '40px'
-                }}>
-                    <div className="col-md-6">
-                        <PieChart data={this.props.data} options={this.props.options}/>
-                    </div>
-                    <div className="col-md-6">
-                        <h2>Legend</h2>
-                        <ul style={{
-                            listStyle: 'none',
-                            paddingLeft: '20px'
-                        }}>
-                            {this
-                                .props
-                                .data
-                                .map((item) => (
-                                    <li key={item.label}>
-                                        <FontIcon className="material-icons" color={item.color} style={{
-                                            fontSize: '1.8em'
-                                        }}>label</FontIcon>
-                                        <span style={{
-                                            verticalAlign: 'super',
-                                            marginLeft: '5px',
-                                            fontSize: '1.5em'
-                                        }}>{item.label}</span>
-                                    </li>
-                                ))}
-                        </ul>
-                    </div>
+            <div style={{
+                display: 'flex',
+                paddingTop: '40px',
+                paddingBottom: '40px'
+            }}>
+                <div className="col-md-6">
+                    <PieChart data={this.props.data} options={this.props.options}/>
                 </div>
-            </Paper>
+                <div className="col-md-6">
+                    <h2>Legend</h2>
+                    <ul style={{
+                        listStyle: 'none',
+                        paddingLeft: '20px'
+                    }}>
+                        {this
+                            .props
+                            .data
+                            .map((item) => (
+                                <li key={item.label}>
+                                    <FontIcon className="material-icons" color={item.color} style={{
+                                        fontSize: '1.8em'
+                                    }}>label</FontIcon>
+                                    <span style={{
+                                        verticalAlign: 'super',
+                                        marginLeft: '5px',
+                                        fontSize: '1.5em'
+                                    }}>{item.label}</span>
+                                </li>
+                            ))}
+                    </ul>
+                </div>
+            </div>
         );
     }
 }
