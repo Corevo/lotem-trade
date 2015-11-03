@@ -5,3 +5,18 @@
     bottom:10%;
     border-left:1px solid black;
 }
+
+.service-block {
+  padding: 15px;
+  display: inline-block;
+  margin: 15px;
+}
+
+.service-block:hover {
+  cursor: pointer;
+}
+
+.pay-form {
+  padding: 20px;
+  margin: 20px;
+}
