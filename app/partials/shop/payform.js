@@ -28,8 +28,12 @@ export default class PayForm extends React.Component {
       hintText="מהות התשלום" />
       <br />
       <DatePicker
-      hintText="Landscape Dialog"
+      hintText="בחר תאריך התחלה"
       mode="landscape"/>
+      <DatePicker
+      hintText="בחר תאריך סיום"
+      mode="landscape"/>
+      <br />
       {
         listServices.map((item) => {
           console.log(item.text);
