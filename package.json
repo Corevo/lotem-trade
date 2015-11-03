@@ -21,9 +21,11 @@
     "babel-loader": "^5.3.2",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "fs": "0.0.2",
     "history": "^1.13.0",
     "material-ui": "^0.13.1",
     "mysql": "^2.9.0",
+    "path": "^0.12.7",
     "react": "^0.14.1",
     "react-addons-create-fragment": "^0.14.1",
     "react-addons-pure-render-mixin": "^0.14.1",
@@ -37,8 +39,6 @@
     "redux-router": "^1.0.0-beta3",
     "sequelize": "^3.13.0",
     "superagent": "^1.4.0",
-    "webpack": "^1.12.2",
-    "fs": "0.0.2",
-    "path": "^0.12.7"
+    "webpack": "^1.12.2"
   }
 }
