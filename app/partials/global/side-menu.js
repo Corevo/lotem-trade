@@ -9,9 +9,8 @@ export default class SideMenu extends React.Component {
         super(props);
         this.navigateTo = this.navigateTo.bind(this);
     }
-    navigateTo (link, title) {
+    navigateTo (link) {
         this.props.history.pushState(null, link);
-        this.props.changeTitle(title);
     }
     render () {
         return (
@@ -23,9 +22,9 @@ export default class SideMenu extends React.Component {
                 height: '100%',
                 width: '280px'
             }}>
-                <MenuItem onClick={this.navigateTo.bind(this, '/', 'Overview')} primaryText="Overview" leftIcon=<FontIcon className="material-icons">payment</FontIcon>
+                <MenuItem onClick={this.navigateTo.bind(this, '/')} primaryText="Overview" leftIcon=<FontIcon className="material-icons">payment</FontIcon>
                 />
-            <MenuItem onClick={this.navigateTo.bind(this, '/shop', 'Shop')} primaryText="Shop" leftIcon=<FontIcon className="material-icons">shopping cart</FontIcon>
+                <MenuItem onClick={this.navigateTo.bind(this, '/shop')} primaryText="Shop" leftIcon=<FontIcon className="material-icons">shopping cart</FontIcon>
                 />
             </Menu>
             </Paper>

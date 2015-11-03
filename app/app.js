@@ -30,6 +30,9 @@ class App extends React.Component {
             { route: 'home', text: 'Home' },
             { route: 'about', text: 'About' }
         ];
+        let changeInnerTitle = function(text) {
+            dispatch(changeTitle(text));
+        };
         return (
             <div>
                 <AppBar title={`Lotem Coin ${this.props.title}`}
@@ -37,12 +40,12 @@ class App extends React.Component {
                 <div style={{
                         clear: 'both'
                     }}>
-                <SideMenu history={this.props.history} changeTitle={text => dispatch(changeTitle(text))} />
+                <SideMenu history={this.props.history} />
                 <Paper className='col-md-9' style={{
                         borderRadius: '0px',
                         height: '100%'
                     }}>
-                    {this.props.children}
+                    {React.cloneElement(this.props.children, {changeTitle: changeInnerTitle})}
                 </Paper>
                 </div>
             </div>
