@@ -1,6 +1,8 @@
 import React from 'react';
 
-class Overview extends React.Component {
+export default class Overview extends React.Component {
+    componentWillMount () {
+    }
     render () {
         return (
             <h1>Overview</h1>
@@ -11,5 +13,3 @@ class Overview extends React.Component {
 Overview.contextTypes = {
     router: React.PropTypes.func
 };
-
-module.exports = Overview;

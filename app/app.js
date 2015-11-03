@@ -6,13 +6,11 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { createStore, compose } from 'redux';
 import { Provider, connect } from 'react-redux';
 import { createHistory } from 'history';
-import { AppBar, IconMenu, LeftNav, FlatButton, IconButton, FontIcon, Paper } from 'material-ui';
-let Menu = require('material-ui/lib/menus/menu');
-let MenuItem = require('material-ui/lib/menus/menu-item');
-let MenuDivider = require('material-ui/lib/menus/menu-divider');
+import { AppBar, Paper } from 'material-ui';
 import coinApp from './redux/reducers';
 import SideMenu from './partials/global/side-menu';
 import Overview from './views/overview';
+import Shop from './views/shop';
 
 class App extends React.Component {
     static propTypes = {
@@ -33,7 +31,7 @@ class App extends React.Component {
                 <div style={{
                         clear: 'both'
                     }}>
-                <SideMenu />
+                <SideMenu history={this.props.history} />
                 <Paper className='col-md-9' style={{
                         borderRadius: '0px',
                         height: '100%'
@@ -59,6 +57,7 @@ let Appx = connect(
 let routes = (
     <Route path="/" component={Appx}>
         <IndexRoute component={Overview} />
+        <Route path="/shop" component={Shop} />
     </Route>
 );
 
