@@ -22,14 +22,14 @@ export default class PayForm extends React.Component {
       { payload: '5', text: 'הכשרה' },
       { payload: '6', text: 'פקודת מבצע' },
       { payload: '7', text: 'פתיחת קריאה: תשתיות השו"ב' },
-      { payload: '8', text: 'Weekly' },
-      { payload: '9', text: 'Weekly' },
-      { payload: '10', text: 'Weekly' },
-      { payload: '11', text: 'Weekly' },
-      { payload: '12', text: 'Weekly' },
-      { payload: '13', text: 'Weekly' },
-      { payload: '14', text: 'Weekly' },
-      { payload: '15', text: 'Weekly' },
+      { payload: '8', text: 'חימום נקודה' },
+      { payload: '9', text: 'בקשה לכח אדם' },
+      { payload: '10', text: 'הקמת שרת' },
+      { payload: '11', text: 'השחרה' },
+      { payload: '12', text: 'הובלה' },
+      { payload: '13', text: 'ליווי Agile' },
+      { payload: '14', text: 'Cloud: Scale in' },
+      { payload: '15', text: 'בקשה להשבתה' },
     ];
     return (
       <div
