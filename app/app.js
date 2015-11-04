@@ -55,18 +55,17 @@ class App extends React.Component {
                         fontWeight: 400,
                         color: '#ffffff',
                         lineHeight: '64px',
-                        ['-webkit-box-flex']: 1,
                         flex: 1,
                         textDecoration: 'none'
                     }}>{`Lotem Coin ${this.props.title}`}</Link>
                     iconElementLeft=<div></div> />
                 <div style={{
-                        clear: 'both'
+                        display: 'flex'
                     }}>
                 <SideMenu history={this.props.history} />
                 <Paper className='col-md-9' style={{
                         borderRadius: '0px',
-                        height: '100%'
+                        paddingBottom: '40px'
                     }}>
                     {React.cloneElement(this.props.children, {changeTitle: changeInnerTitle})}
                 </Paper>

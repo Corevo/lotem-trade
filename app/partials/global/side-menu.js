@@ -19,7 +19,6 @@ export default class SideMenu extends React.Component {
                 }}>
             <Menu ref="menu" zDepth={0} style={{
                 position: 'relative',
-                height: '100%',
                 width: '280px'
             }}>
                 <MenuItem onClick={this.navigateTo.bind(this, '/')} primaryText="Overview" leftIcon=<FontIcon className="material-icons">payment</FontIcon>

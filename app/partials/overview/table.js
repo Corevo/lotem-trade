@@ -26,15 +26,39 @@ export default class OverviewTable extends React.Component {
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false}>
-                    <TableRowColumn style={{
-                        textAlign: 'center'
-                    }}>Network Security</TableRowColumn>
-                    <TableRowColumn style={{
-                        textAlign: 'center'
-                    }}>Open ports for production</TableRowColumn>
-                    <TableRowColumn style={{
-                        textAlign: 'center'
-                    }}>100§</TableRowColumn>
+                    <TableRow>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>Network Security</TableRowColumn>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>Open ports for production</TableRowColumn>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>100§</TableRowColumn>
+                    </TableRow>
+                    <TableRow>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>Network Security</TableRowColumn>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>Open ports for production</TableRowColumn>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>100§</TableRowColumn>
+                    </TableRow>
+                    <TableRow>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>Network Security</TableRowColumn>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>Open ports for production</TableRowColumn>
+                        <TableRowColumn style={{
+                            textAlign: 'center'
+                        }}>100§</TableRowColumn>
+                    </TableRow>
                 </TableBody>
             </Table>
         );
