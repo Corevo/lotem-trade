@@ -23,5 +23,5 @@ app.use('*', function(req, res) {
 let server = app.listen(port, () => {
 
   let { address } = server.address();
-  log.log(`Server listening at http:\/\/${address}:${port}`);
+  log.info(`Server listening at http:\/\/${address}:${port}`);
 });
