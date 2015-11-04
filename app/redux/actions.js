@@ -14,7 +14,7 @@ export function changeTitle(title) {
     return { type: CHANGE_TITLE, title };
 }
 export function addTransaction(transaction) {
-  return { type: ADD_TRANSACTION, transaction };
+    return { type: ADD_TRANSACTION, transaction };
 }
 export function getAccounts(accounts) {
     return { type: SET_ACCOUNTS, accounts };
