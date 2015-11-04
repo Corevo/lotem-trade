@@ -7,8 +7,9 @@ import { createStore, compose } from 'redux';
 import { Provider, connect } from 'react-redux';
 import { createHistory } from 'history';
 import { AppBar, Paper } from 'material-ui';
+import request from 'superagent';
 import coinApp from './redux/reducers';
-import { changeTitle } from './redux/actions';
+import { changeTitle, getAccounts } from './redux/actions';
 import SideMenu from './partials/global/side-menu';
 import Overview from './views/overview';
 import Shop from './views/shop';
@@ -57,7 +58,7 @@ class App extends React.Component {
                         lineHeight: '64px',
                         flex: 1,
                         textDecoration: 'none'
-                    }}>{`Lotem Coin ${this.props.title}`}</Link>
+                    }}>{`Lotem Trade - ${this.props.title}`}</Link>
                     iconElementLeft=<div></div> />
                 <div style={{
                         display: 'flex'
@@ -67,7 +68,7 @@ class App extends React.Component {
                         borderRadius: '0px',
                         paddingBottom: '40px'
                     }}>
-                    {React.cloneElement(this.props.children, {changeTitle: changeInnerTitle})}
+                    {React.cloneElement(this.props.children, {changeTitle: changeInnerTitle, account: this.props.accounts[0]})}
                 </Paper>
                 </div>
             </div>
@@ -81,7 +82,8 @@ let Appx = connect(
     // Use a selector to subscribe to state
     state => ({
         q: state.router.location.query.q,
-        title: state.title
+        title: state.title,
+        accounts: state.accounts
     }),
     // Use an action creator for navigation
     { pushState }
@@ -107,5 +109,12 @@ class Root extends React.Component {
         );
     }
 }
+
+dispatch(getAccounts(JSON.parse('[{"name":"Second Account","id":2,"balance":1000}]')));
+
+request.get('/api/user/michael/accounts').end(function(err, res) {
+    let accounts = JSON.parse(res.text);
+    dispatch(getAccounts(accounts));
+});
 
 ReactDOM.render(<Root />, document.getElementById('app'));

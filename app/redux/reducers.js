@@ -1,6 +1,15 @@
 import { combineReducers } from 'redux';
 import { routerStateReducer } from 'redux-router';
-import { ADD_TRANSACTION, CHANGE_TITLE } from './actions';
+import { ADD_TRANSACTION, CHANGE_TITLE, SET_ACCOUNTS } from './actions';
+
+function accounts(state = [], action) {
+    switch (action.type) {
+        case SET_ACCOUNTS:
+        return action.accounts;
+        default:
+        return state;
+    }
+}
 
 function accountTransactions(state = [], action) {
     switch (action.type) {
@@ -24,7 +33,8 @@ function changeTitle(state = 'Overview', action) {
 
 const reducers = combineReducers({
     router: routerStateReducer,
-    title: changeTitle
+    title: changeTitle,
+    accounts
 });
 
 export default reducers;
