@@ -11,7 +11,7 @@ export default class Overview extends React.Component {
     render () {
         return (
             <div>
-                <h2>Overview</h2>
+                <h2>Overview {this.props.account.name}</h2>
                 <Paper>
                     <Tabs>
                         <Tab label=<span>
