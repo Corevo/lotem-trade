@@ -4,7 +4,7 @@ import fs from 'fs';
 import log from './lib/log.js';
 
 import transactions from './lib/routes/transaction';
-import home from './lib/routes/home';
+import user from './lib/routes/user';
 
 let port = 8080;
 let app = express();
@@ -12,7 +12,7 @@ let app = express();
 const STATIC_DIR = path.join(__dirname, 'public/assets');
 app.use('/assets', express.static(STATIC_DIR));
 
-app.use('/api', home);
+app.use('/api/user', user);
 app.use('/api/transactions', transactions);
 
 app.use('*', function(req, res) {
