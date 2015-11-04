@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, TableHeader, TableHeaderColumn, TableBody, TableRow, TableRowColumn} from 'material-ui';
+import {Table, TableHeader, TableHeaderColumn, TableBody, TableRow, TableRowColumn, FontIcon} from 'material-ui';
 
 export default class OverviewTable extends React.Component {
     render () {
