@@ -83,8 +83,6 @@ class App extends React.Component {
     }
 }
 
-//
-
 let Appx = connect(
     // Use a selector to subscribe to state
     state => ({

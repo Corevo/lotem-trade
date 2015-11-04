@@ -8,12 +8,13 @@ export default class PayForm extends React.Component {
     super(props);
     this.state = {
       selectedId: null,
-      item: {}
+      item: {},
+      team: 'תכניתן ראשי'
     };
     this.handleTargetAccountChange = this.handleTargetAccountChange.bind(this);
     this.handleClickSave = this.handleClickSave.bind(this);
   }
-  handleTargetAccountChange (event, team) {
+  handleTargetAccountChange (event, index, team) {
     this.setState({
       team: team.text
     });
@@ -21,8 +22,8 @@ export default class PayForm extends React.Component {
   handleClickSave (event) {
     this.props.addTransaction({
       amount: this.state.item.amount,
-      team: this.state.team,
-      desc: this.refs.desc.refs.input.value
+      account: this.state.team,
+      desc: this.state.item.text
     });
   }
   handleClickService (item) {
