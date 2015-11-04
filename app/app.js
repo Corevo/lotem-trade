@@ -9,7 +9,7 @@ import { createHistory } from 'history';
 import { AppBar, Paper } from 'material-ui';
 import request from 'superagent';
 import coinApp from './redux/reducers';
-import { changeTitle, getAccounts } from './redux/actions';
+import { changeTitle, getAccounts, addTransactions } from './redux/actions';
 import SideMenu from './partials/global/side-menu';
 import Overview from './views/overview';
 import Shop from './views/shop';
@@ -115,6 +115,7 @@ dispatch(getAccounts(JSON.parse('[{"name":"Second Account","id":2,"balance":1000
 request.get('/api/user/michael/accounts').end(function(err, res) {
     let accounts = JSON.parse(res.text);
     dispatch(getAccounts(accounts));
+    dispatch(addTransactions([{name: 'test'}]));
 });
 
 ReactDOM.render(<Root />, document.getElementById('app'));

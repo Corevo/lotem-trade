@@ -14,9 +14,6 @@ function accountTransactions(state = [], action) {
 }
 
 function accounts(state = [], action) {
-    let transactions = state.accounts[action.accountId].transactions;
-    let newState = Object.assign({}, state);
-    newState.accounts[action.accountId].transactions = accountTransactions(transactions = [], action);
     switch (action.type) {
         case SET_ACCOUNTS:
         return action.accounts;
@@ -37,7 +34,8 @@ function changeTitle(state = 'Overview', action) {
 const reducers = combineReducers({
     router: routerStateReducer,
     title: changeTitle,
-    accounts
+    accounts,
+    transactions
 });
 
 export default reducers;
