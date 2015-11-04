@@ -8,7 +8,7 @@ export default class Shop extends React.Component {
   render () {
     return (
       <div>
-        <h1>Shop</h1>
+        <h2>Shop</h2>
         <PayForm />
       </div>
     );
