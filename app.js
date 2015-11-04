@@ -1,6 +1,8 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
+import log from 'lib/log.js';
+
 import transactions from './lib/routes/transaction';
 import home from './lib/routes/home';
 
@@ -19,6 +21,7 @@ app.use('*', function(req, res) {
 
 // Start the server.
 let server = app.listen(port, () => {
-    let { address } = server.address();
-    console.log(`Server listening at http://${address}:${port}`);
+
+  let { address } = server.address();
+  log.log(`Server listening at http:\/\/${address}:${port}`);
 });
