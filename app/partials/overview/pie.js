@@ -61,13 +61,13 @@ Pie.defaultProps = {
             label: "Balance"
         }, {
             value: 50,
-            color: Colors.cyan400,
-            highlight: Colors.cyan300,
+            color: Colors.blueGrey400,
+            highlight: Colors.blueGrey300,
             label: "Reserved"
         }, {
             value: 100,
-            color: Colors.blueGrey400,
-            highlight: Colors.blueGrey300,
+            color: Colors.cyan400,
+            highlight: Colors.cyan300,
             label: "Paid"
         }
     ],
