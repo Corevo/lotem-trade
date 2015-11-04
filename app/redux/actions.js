@@ -3,7 +3,7 @@
  */
 
 export const CHANGE_TITLE = 'CHANGE_TITLE';
-export const ADD_TRANSACTION = 'ADD_TRANSACTION';
+export const ADD_TRANSACTIONS = 'ADD_TRANSACTIONS';
 export const SET_ACCOUNTS = 'SET_ACCOUNTS';
 
 /*
@@ -14,7 +14,7 @@ export function changeTitle(title) {
     return { type: CHANGE_TITLE, title };
 }
 export function addTransaction(transactions) {
-    return { type: ADD_TRANSACTION, transactions };
+    return { type: ADD_TRANSACTIONS, transactions };
 }
 export function getAccounts(accounts) {
     return { type: SET_ACCOUNTS, accounts };
