@@ -57,7 +57,7 @@ class App extends React.Component {
                         lineHeight: '64px',
                         flex: 1,
                         textDecoration: 'none'
-                    }}>{`Lotem Coin ${this.props.title}`}</Link>
+                    }}>{`Lotem Trade - ${this.props.title}`}</Link>
                     iconElementLeft=<div></div> />
                 <div style={{
                         display: 'flex'

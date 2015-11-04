@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import log from 'lib/log.js';
+import log from './lib/log.js';
 
 import transactions from './lib/routes/transaction';
 import home from './lib/routes/home';

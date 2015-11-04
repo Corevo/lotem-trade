@@ -23,7 +23,7 @@ export default class SideMenu extends React.Component {
             }}>
                 <MenuItem onClick={this.navigateTo.bind(this, '/')} primaryText="Overview" leftIcon=<FontIcon className="material-icons">payment</FontIcon>
                 />
-                <MenuItem onClick={this.navigateTo.bind(this, '/shop')} primaryText="Shop" leftIcon=<FontIcon className="material-icons">shopping cart</FontIcon>
+                <MenuItem onClick={this.navigateTo.bind(this, '/shop')} primaryText="Purchase" leftIcon=<FontIcon className="material-icons">shopping cart</FontIcon>
                 />
             </Menu>
             </Paper>
