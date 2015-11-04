@@ -6,7 +6,7 @@ function accountTransactions(state = [], action) {
     switch (action.type) {
         case ADD_TRANSACTIONS:
         return [
-            ...state, ...action.transactions
+             ...action.transactions, ...state
         ];
         default:
         return state;
@@ -18,7 +18,7 @@ function accounts(state = [], action) {
         case SET_ACCOUNTS:
         return action.accounts;
         default:
-        return newState;
+        return state;
     }
 }
 
@@ -35,7 +35,7 @@ const reducers = combineReducers({
     router: routerStateReducer,
     title: changeTitle,
     accounts,
-    transactions
+    transactions: accountTransactions
 });
 
 export default reducers;

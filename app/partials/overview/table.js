@@ -26,39 +26,19 @@ export default class OverviewTable extends React.Component {
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false}>
+                    {this.props.transactions.map((transaction) =>(
                     <TableRow>
                         <TableRowColumn style={{
                             textAlign: 'center'
-                        }}>Network Security</TableRowColumn>
+                        }}>{transaction.account}</TableRowColumn>
                         <TableRowColumn style={{
                             textAlign: 'center'
-                        }}>Open ports for production</TableRowColumn>
+                        }}>{transaction.desc}</TableRowColumn>
                         <TableRowColumn style={{
                             textAlign: 'center'
-                        }}>100§</TableRowColumn>
-                    </TableRow>
-                    <TableRow>
-                        <TableRowColumn style={{
-                            textAlign: 'center'
-                        }}>Network Security</TableRowColumn>
-                        <TableRowColumn style={{
-                            textAlign: 'center'
-                        }}>Open ports for production</TableRowColumn>
-                        <TableRowColumn style={{
-                            textAlign: 'center'
-                        }}>100§</TableRowColumn>
-                    </TableRow>
-                    <TableRow>
-                        <TableRowColumn style={{
-                            textAlign: 'center'
-                        }}>Network Security</TableRowColumn>
-                        <TableRowColumn style={{
-                            textAlign: 'center'
-                        }}>Open ports for production</TableRowColumn>
-                        <TableRowColumn style={{
-                            textAlign: 'center'
-                        }}>100§</TableRowColumn>
-                    </TableRow>
+                        }}>{transaction.amount}§</TableRowColumn>
+                </TableRow>))
+                }
                 </TableBody>
             </Table>
         );

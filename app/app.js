@@ -42,6 +42,9 @@ class App extends React.Component {
         let changeInnerTitle = function(text) {
             dispatch(changeTitle(text));
         };
+        let addNewTransaction = function(transaction) {
+            dispatch(addTransactions([transaction]));
+        };
         return (
             <div>
                 <AppBar title=<Link to="/" style={{
@@ -68,7 +71,11 @@ class App extends React.Component {
                         borderRadius: '0px',
                         paddingBottom: '40px'
                     }}>
-                    {React.cloneElement(this.props.children, {changeTitle: changeInnerTitle, account: this.props.accounts[0]})}
+                    {React.cloneElement(this.props.children, {
+                        changeTitle: changeInnerTitle,
+                        account: this.props.accounts[0],
+                        transactions: this.props.transactions,
+                        addTransaction: addNewTransaction})}
                 </Paper>
                 </div>
             </div>
@@ -83,7 +90,8 @@ let Appx = connect(
     state => ({
         q: state.router.location.query.q,
         title: state.title,
-        accounts: state.accounts
+        accounts: state.accounts,
+        transactions: state.transactions
     }),
     // Use an action creator for navigation
     { pushState }
@@ -115,7 +123,28 @@ dispatch(getAccounts(JSON.parse('[{"name":"Second Account","id":2,"balance":1000
 request.get('/api/user/michael/accounts').end(function(err, res) {
     let accounts = JSON.parse(res.text);
     dispatch(getAccounts(accounts));
-    dispatch(addTransactions([{name: 'test'}]));
+    dispatch(addTransactions([
+        {
+            account: 'Network Security',
+            desc: 'Open ports for Joe',
+            amount: 0
+        },
+        {
+            account: 'C2Core',
+            desc: 'Support',
+            amount: 50
+        },
+        {
+            account: 'IT',
+            desc: 'Cloud Scale',
+            amount: 25
+        },
+        {
+            account: 'Opt Information Research',
+            desc: 'Big Data',
+            amount: 100
+        }
+    ]));
 });
 
 ReactDOM.render(<Root />, document.getElementById('app'));
