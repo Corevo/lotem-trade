@@ -9,7 +9,7 @@ export default class Shop extends React.Component {
     return (
       <div>
         <h2>Shop</h2>
-        <PayForm />
+        <PayForm addTransaction={this.props.addTransaction} />
       </div>
     );
   }
