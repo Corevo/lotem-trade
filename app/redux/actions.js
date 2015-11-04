@@ -13,8 +13,8 @@ export const SET_ACCOUNTS = 'SET_ACCOUNTS';
 export function changeTitle(title) {
     return { type: CHANGE_TITLE, title };
 }
-export function addTransaction(transaction) {
-    return { type: ADD_TRANSACTION, transaction };
+export function addTransaction(transactions) {
+    return { type: ADD_TRANSACTION, transactions };
 }
 export function getAccounts(accounts) {
     return { type: SET_ACCOUNTS, accounts };
