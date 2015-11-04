@@ -1,22 +1,22 @@
 import { combineReducers } from 'redux';
 import { routerStateReducer } from 'redux-router';
-import { ADD_TRANSACTION, CHANGE_TITLE, SET_ACCOUNTS } from './actions';
+import { ADD_TRANSACTIONS, CHANGE_TITLE, SET_ACCOUNTS } from './actions';
 
-function accounts(state = [], action) {
+function accountTransactions(state = [], action) {
     switch (action.type) {
-        case SET_ACCOUNTS:
-        return action.accounts;
+        case ADD_TRANSACTIONS:
+        return [
+             ...action.transactions, ...state
+        ];
         default:
         return state;
     }
 }
 
-function accountTransactions(state = [], action) {
+function accounts(state = [], action) {
     switch (action.type) {
-        case ADD_TRANSACTION:
-        return [
-            ...state, action.transaction
-        ];
+        case SET_ACCOUNTS:
+        return action.accounts;
         default:
         return state;
     }
@@ -34,7 +34,8 @@ function changeTitle(state = 'Overview', action) {
 const reducers = combineReducers({
     router: routerStateReducer,
     title: changeTitle,
-    accounts
+    accounts,
+    transactions: accountTransactions
 });
 
 export default reducers;

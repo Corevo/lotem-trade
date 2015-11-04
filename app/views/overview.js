@@ -45,7 +45,7 @@ export default class Overview extends React.Component {
                         margin: '1em 0',
                         padding: 0
                     }}/>
-                    <Table />
+                <Table transactions={this.props.transactions} />
                 </Paper>
             </div>
         );
